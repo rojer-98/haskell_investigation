@@ -1,8 +1,11 @@
 module Nat (
     Nat (..),
     sampleNum,
+    iterateNum,
+    repeatNum,
 ) where
 
+import Control.Monad.Fix (fix)
 import Data.Bifunctor (Bifunctor (bimap))
 import Data.Ix (
     Ix (
@@ -86,3 +89,6 @@ myFilter f (x : xs)
     | otherwise = mf
   where
     mf = myFilter f xs
+
+repeatNum :: Nat -> [Nat]
+repeatNum = fix . (:)

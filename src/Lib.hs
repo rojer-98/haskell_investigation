@@ -3,6 +3,8 @@ module Lib (
     module Program,
     module BinTree,
     module Stream,
+    module Calculator,
+    module KleisliTest,
     someFunc,
     additionalFunc,
     ioAggregatior,
@@ -10,6 +12,8 @@ module Lib (
 ) where
 
 import BinTree
+import Calculator
+import KleisliTest
 import Nat
 import Program
 import Stream

@@ -26,6 +26,8 @@ source-repository head
 library
   exposed-modules:
       BinTree
+      Calculator
+      KleisliTest
       Lib
       Nat
       Program
