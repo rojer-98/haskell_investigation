@@ -5,7 +5,6 @@ import Lib (
     ioAggregatior,
     -- returnSampleProgramm,
 
-    iterateNum,
     printAllBinTree,
     reverseBool,
     sampleNum,
@@ -23,5 +22,4 @@ main =
         , additionalFunc
         , print $ show $ reverseBool [True, False, False, False]
         , printAllBinTree
-        , print $ take 5 $ iterateNum (2-) 10
         ]

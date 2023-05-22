@@ -5,12 +5,15 @@ module Lib (
     module Stream,
     module Calculator,
     module KleisliTest,
+    module LensTest,
     someFunc,
     additionalFunc,
     ioAggregatior,
     reverseBool,
-) where
+)
+where
 
+import LensTest
 import BinTree
 import Calculator
 import KleisliTest

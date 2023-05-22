@@ -28,6 +28,7 @@ library
       BinTree
       Calculator
       KleisliTest
+      LensTest
       Lib
       Nat
       Program

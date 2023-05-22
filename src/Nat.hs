@@ -1,9 +1,9 @@
 module Nat (
     Nat (..),
     sampleNum,
-    iterateNum,
     repeatNum,
-) where
+)
+where
 
 import Control.Monad.Fix (fix)
 import Data.Bifunctor (Bifunctor (bimap))

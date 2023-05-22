@@ -1,0 +1,13 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:sampleStack"
+
+    - path: "app/Main.hs"
+      component: "sampleStack:exe:sampleStack-exe"
+
+    - path: "app/Paths_sampleStack.hs"
+      component: "sampleStack:exe:sampleStack-exe"
+
+    - path: "test"
+      component: "sampleStack:test:sampleStack-test"
