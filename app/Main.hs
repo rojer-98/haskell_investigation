@@ -9,8 +9,8 @@ import Lib (
     reverseBool,
     sampleNum,
     someFunc,
+    testLens,
  )
-
 import Nat
 
 main :: IO ()
@@ -22,4 +22,5 @@ main =
         , additionalFunc
         , print $ show $ reverseBool [True, False, False, False]
         , printAllBinTree
+        , testLens
         ]

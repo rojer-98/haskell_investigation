@@ -10,13 +10,14 @@ module Lib (
     additionalFunc,
     ioAggregatior,
     reverseBool,
+    testLens,
 )
 where
 
-import LensTest
 import BinTree
 import Calculator
 import KleisliTest
+import LensTest
 import Nat
 import Program
 import Stream
