@@ -58,3 +58,5 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - sampleStack
+    - tasty
+    - tasty-hunit
