@@ -1,3 +1,10 @@
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE FunctionalDependencies #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE RankNTypes #-}
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE TypeFamilies #-}
+
 module Lib (
     module Nat,
     module Program,
@@ -6,6 +13,7 @@ module Lib (
     module Calculator,
     module KleisliTest,
     module LensTest,
+    module Template,
     someFunc,
     additionalFunc,
     ioAggregatior,
@@ -21,6 +29,11 @@ import LensTest
 import Nat
 import Program
 import Stream
+import Template (generateTupleClass, someSplice)
+
+$someSplice
+
+$(generateTupleClass 10)
 
 someFunc :: IO ()
 someFunc = putStrLn "someFunc"
@@ -37,3 +50,16 @@ ioAggregatior xs =
 reverseBool :: [Bool] -> [Bool]
 reverseBool [] = []
 reverseBool (x : xs) = reverseBool xs ++ [x]
+
+class ArrayElem e where
+    data Array e
+    index :: Array e -> Int -> e
+
+newtype Point2 a = Point2
+    { x :: (Ord a) => a
+    }
+
+data Point1 a = Point1
+    { z :: (Ord a, Show a) => a
+    , y :: a
+    }
