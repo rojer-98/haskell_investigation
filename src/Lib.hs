@@ -5,8 +5,8 @@
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TypeFamilies #-}
 
-module Lib (
-    module Nat,
+module Lib
+  ( module Nat,
     module Program,
     module BinTree,
     module Stream,
@@ -19,7 +19,7 @@ module Lib (
     ioAggregatior,
     reverseBool,
     testLens,
-)
+  )
 where
 
 import BinTree
@@ -44,22 +44,22 @@ additionalFunc = putStrLn "additionalFunc"
 ioAggregatior :: [IO ()] -> IO ()
 ioAggregatior [] = putStrLn "End"
 ioAggregatior xs =
-    putStrLn "Begin"
-        >> foldr (>>) (putStrLn "End") xs
+  putStrLn "Begin"
+    >> foldr (>>) (putStrLn "End") xs
 
 reverseBool :: [Bool] -> [Bool]
 reverseBool [] = []
 reverseBool (x : xs) = reverseBool xs ++ [x]
 
 class ArrayElem e where
-    data Array e
-    index :: Array e -> Int -> e
+  data Array e
+  index :: Array e -> Int -> e
 
 newtype Point2 a = Point2
-    { x :: (Ord a) => a
-    }
+  { x :: (Ord a) => a
+  }
 
 data Point1 a = Point1
-    { z :: (Ord a, Show a) => a
-    , y :: a
-    }
+  { z :: (Ord a, Show a) => a,
+    y :: a
+  }

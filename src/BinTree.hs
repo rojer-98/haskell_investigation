@@ -1,9 +1,7 @@
-module BinTree (
-    printAllBinTree,
-) where
+module BinTree (printAllBinTree) where
 
 data BinTree a = Branch (BinTree a) (BinTree a) | Leaf a
-    deriving (Show)
+  deriving (Show)
 
 reverseBinTree :: BinTree a -> BinTree a
 reverseBinTree (Branch a b) = Branch (reverseBinTree b) (reverseBinTree a)
@@ -34,22 +32,22 @@ leavesBinTree (Leaf a) = [a]
  -}
 sampleBinTree :: BinTree String
 sampleBinTree =
-    Branch
+  Branch
+    ( Branch
         ( Branch
+            (Leaf "Some3")
             ( Branch
-                (Leaf "Some3")
+                (Leaf "Some4")
                 ( Branch
-                    (Leaf "Some4")
-                    ( Branch
-                        (Leaf "Some5")
-                        ( Branch (Leaf "Some6") (Leaf "Some7")
-                        )
+                    (Leaf "Some5")
+                    ( Branch (Leaf "Some6") (Leaf "Some7")
                     )
                 )
             )
-            (Leaf "Some1")
         )
-        (Leaf "Some2")
+        (Leaf "Some1")
+    )
+    (Leaf "Some2")
 
 printAllBinTree :: IO ()
 printAllBinTree = print $ depthBinTree sampleBinTree
